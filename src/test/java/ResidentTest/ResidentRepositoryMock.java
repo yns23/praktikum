@@ -85,5 +85,6 @@ public class ResidentRepositoryMock {
         assertEquals(robin, baseResidentService.getUniqueResident(robinTest));
         assertEquals(tobi, baseResidentService.getUniqueResident(tobiTest));
 
+        //hi
     }
 }

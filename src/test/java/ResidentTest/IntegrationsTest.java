@@ -91,11 +91,6 @@ public class IntegrationsTest {
         assertEquals(tobi, baseResidentService.getUniqueResident(tobiTest));
 
 
-        try {
-            assertEquals(tobi, baseResidentService.getUniqueResident(fail));
-        } catch (ResidentServiceException e) {
-            e.printStackTrace();
-        }
 
     }
 

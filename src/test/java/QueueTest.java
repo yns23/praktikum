@@ -35,15 +35,6 @@ public class QueueTest {
         assert(test.dequeue()==23);
 
 
-        try{
-            Queue Test = new Queue(0);
-            empty.dequeue();
-            fail("Erwartete Ausnahme wurde nicht geworfen");
-
-        } catch(ArithmeticException e){
-        }
-
-
     }
 
 

@@ -1,43 +1,27 @@
-import de.hfu.Queue;
-import de.hfu.Util;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
-
+import de.hfu.Queue;
 
 public class QueueTest {
-
-    private Queue test;
-    private Queue empty;
-
-
-    @Before
-    public void createQueue(){
-        test = new Queue(3);
-    }
-
     @Test
-    public void TestQ(){
+    public void checkQueue(){
+        Queue test = new Queue(3);
 
-        test.enqueue(1);
-        test.enqueue(2);
-        test.enqueue(3);
-        test.enqueue(4);
-        test.enqueue(5);
-        test.enqueue(6);
-        test.enqueue(7);
-        assert(test.dequeue()==1);
-        assert(test.dequeue()==2);
-        assert(test.dequeue()==7);
-        test.enqueue(23);
-        assert(test.dequeue()==23);
+        test.enqueue(10);
+        assertEquals(10, test.dequeue());
 
+        test.enqueue(11);
+        test.enqueue(12);
+        test.enqueue(13);
+        test.enqueue(14);
+        assertEquals(11, test.dequeue());
+        assertEquals(12, test.dequeue());
+        assertEquals(14, test.dequeue());
 
+        try{
+            test.dequeue();
+            assertTrue(false);
+        }
+        catch (IllegalStateException e){}
     }
-
-
-
-
 }
